@@ -27,7 +27,7 @@ export default function ServiceDetailModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="!max-w-[96vw] w-full h-[90vh] overflow-y-auto bg-nn-bg p-0" showCloseButton={false}>
+      <DialogContent className="!max-w-[88vw] w-full h-[82vh] overflow-y-auto bg-nn-bg p-0" showCloseButton={false}>
         <button
           onClick={onClose}
           className="absolute right-4 top-4 z-50 rounded-full p-2 bg-nn-bg/80 backdrop-blur-sm border border-nn-text/10 hover:bg-nn-accent hover:border-nn-accent transition-colors"
@@ -35,7 +35,7 @@ export default function ServiceDetailModal({
           <X size={20} className="text-nn-text" />
         </button>
 
-        <DialogHeader className="p-8 border-b border-nn-text/10">
+        <DialogHeader className="pt-8 px-8 pb-6 border-b border-nn-text/10">
           <span className="font-mono text-xs tracking-[0.14em] text-nn-accent uppercase mb-2">
             Service {service.number}
           </span>
