@@ -74,7 +74,7 @@ export const services: Service[] = [
       pricing: [
         {
           name: 'Introduction',
-          price: '$599',
+          price: '€399',
           description: '1-day workshop for small teams',
           features: [
             '4-hour intensive session',
@@ -86,7 +86,7 @@ export const services: Service[] = [
         },
         {
           name: 'Professional',
-          price: '$1,999',
+          price: '€999',
           description: '3-day comprehensive bootcamp',
           features: [
             '3 full days of training',
@@ -215,7 +215,7 @@ export const services: Service[] = [
       pricing: [
         {
           name: 'Starter',
-          price: '$1,500',
+          price: '€799',
           description: 'Single workflow automation',
           features: [
             'One automated workflow',
@@ -227,7 +227,7 @@ export const services: Service[] = [
         },
         {
           name: 'Growth',
-          price: '$4,500',
+          price: '€1,999',
           description: 'Comprehensive automation suite',
           features: [
             '5-8 automated workflows',
@@ -356,8 +356,8 @@ export const services: Service[] = [
       pricing: [
         {
           name: 'Basic',
-          price: '$2,000',
-          description: 'Setup + $299/month',
+          price: '€999',
+          description: 'Setup + €149/month',
           features: [
             'Website chat widget',
             'Up to 1,000 conversations/month',
@@ -369,8 +369,8 @@ export const services: Service[] = [
         },
         {
           name: 'Professional',
-          price: '$4,000',
-          description: 'Setup + $599/month',
+          price: '€1,799',
+          description: 'Setup + €299/month',
           features: [
             'Multi-platform deployment',
             'Up to 5,000 conversations/month',
@@ -500,7 +500,7 @@ export const services: Service[] = [
       pricing: [
         {
           name: 'Landing Page',
-          price: '$2,500',
+          price: '€999',
           description: 'Single high-converting page',
           features: [
             '1 custom landing page',
@@ -513,7 +513,7 @@ export const services: Service[] = [
         },
         {
           name: 'Business Site',
-          price: '$7,500',
+          price: '€2,999',
           description: '5-10 page professional website',
           features: [
             'Custom design & branding',
@@ -552,7 +552,7 @@ export const services: Service[] = [
         },
         {
           question: 'What if I need changes after launch?',
-          answer: 'All projects include a support period. After that, we offer maintenance plans starting at $200/month for updates, security, and performance monitoring.'
+          answer: 'All projects include a support period. After that, we offer maintenance plans starting at €99/month for updates, security, and performance monitoring.'
         },
         {
           question: 'How long does a project take?',

@@ -11,7 +11,7 @@ export default function PricingCard({ tier, onSelect }: PricingCardProps) {
     <div className={`relative p-8 rounded-xl border-2 flex flex-col h-full ${
       tier.highlighted
         ? 'border-nn-accent bg-nn-accent/5 shadow-xl scale-105'
-        : 'border-nn-text/10 bg-white'
+        : 'border-nn-text/20 bg-nn-bg'
     }`}>
       {tier.highlighted && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-nn-accent rounded-full">

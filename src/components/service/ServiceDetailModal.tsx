@@ -27,7 +27,7 @@ export default function ServiceDetailModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl h-[90vh] overflow-y-auto bg-nn-bg p-0">
+      <DialogContent className="max-w-[95vw] w-full h-[90vh] overflow-y-auto bg-nn-bg p-0">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 z-50 rounded-full p-2 bg-nn-bg/80 backdrop-blur-sm border border-nn-text/10 hover:bg-nn-accent hover:border-nn-accent transition-colors"
@@ -35,18 +35,18 @@ export default function ServiceDetailModal({
           <X size={20} className="text-nn-text" />
         </button>
 
-        <DialogHeader className="relative h-64 overflow-hidden">
+        <DialogHeader className="relative h-72 overflow-hidden">
           <img
             src={service.image}
             alt={service.panelTitle}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-nn-bg via-nn-bg/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-nn-bg via-nn-bg/70 to-nn-bg/20" />
           <div className="relative h-full flex flex-col justify-end p-8">
             <span className="font-mono text-xs tracking-[0.14em] text-nn-accent uppercase mb-2">
               Service {service.number}
             </span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-nn-text">
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-white">
               {service.panelTitle}
             </h2>
           </div>
@@ -54,7 +54,7 @@ export default function ServiceDetailModal({
 
         <div className="p-8">
           <div className="mb-8">
-            <p className="text-xl text-nn-text/90 leading-relaxed mb-6">
+            <p className="text-base md:text-lg text-nn-text/90 leading-relaxed mb-6">
               {service.details.overview}
             </p>
 
