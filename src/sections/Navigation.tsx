@@ -59,7 +59,7 @@ export default function Navigation() {
             {/* Center Text - Desktop Only */}
             <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
               <span className="font-mono text-xs tracking-[0.14em] text-nn-text-secondary uppercase">
-                Based in Heidelberg • Serving Globally
+                Based in Germany • Serving Globally
               </span>
             </div>
 
