@@ -39,7 +39,7 @@ export default function ServiceDetailModal({
           <img
             src={service.image}
             alt={service.panelTitle}
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-nn-bg via-nn-bg/70 to-nn-bg/20" />
           <div className="relative h-full flex flex-col justify-end p-8">
