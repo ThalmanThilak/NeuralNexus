@@ -5,48 +5,10 @@ import Navigation from './sections/Navigation';
 import HeroSection from './sections/HeroSection';
 import ServiceSection from './sections/ServiceSection';
 import ContactSection from './sections/ContactSection';
+import { services } from './data/services';
 import './App.css';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const services = [
-  {
-    id: 'training',
-    number: '01',
-    title: 'AI TRAINING',
-    panelTitle: 'AI Training Programs',
-    description: 'Master AI fundamentals, discover powerful tools, and unlock career opportunities.',
-    cta: 'Book a Workshop',
-    image: '/images/training_portrait.jpg',
-  },
-  {
-    id: 'automation',
-    number: '02',
-    title: 'AUTOMATION',
-    panelTitle: 'Workflow Automation',
-    description: 'We design systems that eliminate busywork—so your team can focus on what matters.',
-    cta: 'Map Your Workflow',
-    image: '/images/automation_portrait.jpg',
-  },
-  {
-    id: 'chatbots',
-    number: '03',
-    title: 'CHATBOTS',
-    panelTitle: 'Custom AI Chatbots',
-    description: '24/7 support, lead qualification, and booking—trained on your business, not generic answers.',
-    cta: 'Design Your Bot',
-    image: '/images/chatbots_portrait.jpg',
-  },
-  {
-    id: 'webdesign',
-    number: '04',
-    title: 'WEB DESIGN',
-    panelTitle: 'Intelligent Web Design',
-    description: 'Fast, accessible, conversion-focused sites—built with modern tools and clean architecture.',
-    cta: 'Request a Proposal',
-    image: '/images/webdesign_portrait.jpg',
-  },
-];
 
 function App() {
   const mainRef = useRef<HTMLDivElement>(null);

@@ -1,0 +1,60 @@
+import { Check } from 'lucide-react';
+import type { PricingTier } from '../../types/service';
+
+interface PricingCardProps {
+  tier: PricingTier;
+  onSelect: () => void;
+}
+
+export default function PricingCard({ tier, onSelect }: PricingCardProps) {
+  return (
+    <div className={`relative p-8 rounded-xl border-2 flex flex-col h-full ${
+      tier.highlighted
+        ? 'border-nn-accent bg-nn-accent/5 shadow-xl scale-105'
+        : 'border-nn-text/10 bg-white'
+    }`}>
+      {tier.highlighted && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-nn-accent rounded-full">
+          <span className="text-sm font-bold text-nn-bg">MOST POPULAR</span>
+        </div>
+      )}
+
+      <div className="text-center mb-6">
+        <h4 className="font-display font-bold text-2xl text-nn-text mb-2">
+          {tier.name}
+        </h4>
+        <div className="mb-2">
+          <span className="font-display font-bold text-4xl text-nn-text">
+            {tier.price}
+          </span>
+          {tier.price !== 'Custom' && (
+            <span className="text-nn-text/60 text-sm ml-1">one-time</span>
+          )}
+        </div>
+        <p className="text-nn-text/70 text-sm">
+          {tier.description}
+        </p>
+      </div>
+
+      <ul className="space-y-3 mb-8 flex-1">
+        {tier.features.map((feature, index) => (
+          <li key={index} className="flex items-start gap-3">
+            <Check size={20} className="text-nn-accent flex-shrink-0 mt-0.5" />
+            <span className="text-nn-text/80 text-sm">{feature}</span>
+          </li>
+        ))}
+      </ul>
+
+      <button
+        onClick={onSelect}
+        className={`w-full py-3 px-6 rounded-lg font-bold text-sm transition-all duration-200 ${
+          tier.highlighted
+            ? 'bg-nn-accent text-nn-bg hover:bg-nn-text hover:text-white'
+            : 'bg-nn-text text-white hover:bg-nn-accent hover:text-nn-bg'
+        }`}
+      >
+        Get Started
+      </button>
+    </div>
+  );
+}

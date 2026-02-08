@@ -1,33 +1,31 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import type { Service } from '../types/service';
+import ServiceDetailModal from '../components/service/ServiceDetailModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface ServiceSectionProps {
-  id: string;
-  number: string;
-  title: string;
-  panelTitle: string;
-  description: string;
-  cta: string;
-  image: string;
+interface ServiceSectionProps extends Service {
   className?: string;
 }
 
-export default function ServiceSection({
-  id,
-  number,
-  title,
-  panelTitle,
-  description,
-  cta,
-  image,
-  className = '',
-}: ServiceSectionProps) {
+export default function ServiceSection(props: ServiceSectionProps) {
+  const {
+    id,
+    number,
+    title,
+    panelTitle,
+    description,
+    cta,
+    image,
+    className = '',
+  } = props;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  
+
   // Desktop refs
   const desktopFrameRef = useRef<HTMLDivElement>(null);
   const desktopTitleRef = useRef<HTMLDivElement>(null);
@@ -111,6 +109,10 @@ export default function ServiceSection({
     }
   };
 
+  const handleLearnMore = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -160,8 +162,8 @@ export default function ServiceSection({
             <p className="text-nn-bg/80 text-sm lg:text-base leading-relaxed mb-6">
               {description}
             </p>
-            <button 
-              onClick={scrollToContact}
+            <button
+              onClick={handleLearnMore}
               className="group inline-flex items-center gap-2 px-5 py-2.5 border-2 border-nn-bg text-nn-bg font-medium text-sm rounded-full hover:bg-nn-bg hover:text-nn-accent transition-all duration-200"
             >
               {cta}
@@ -199,8 +201,8 @@ export default function ServiceSection({
             <p className="text-nn-bg/80 text-sm leading-relaxed mb-4">
               {description}
             </p>
-            <button 
-              onClick={scrollToContact}
+            <button
+              onClick={handleLearnMore}
               className="group inline-flex items-center gap-2 px-4 py-2 border-2 border-nn-bg text-nn-bg font-medium text-sm rounded-full hover:bg-nn-bg hover:text-nn-accent transition-all duration-200"
             >
               {cta}
@@ -209,6 +211,13 @@ export default function ServiceSection({
           </div>
         </div>
       </div>
+
+      <ServiceDetailModal
+        service={props}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onContactClick={scrollToContact}
+      />
     </section>
   );
 }
