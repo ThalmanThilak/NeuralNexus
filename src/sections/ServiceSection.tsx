@@ -137,7 +137,7 @@ export default function ServiceSection({
           <img
             src={image}
             alt={panelTitle}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-nn-bg/30 via-transparent to-transparent" />
         </div>

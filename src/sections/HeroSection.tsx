@@ -155,7 +155,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
           <img
             src="/images/hero_portrait.jpg"
             alt="Neural Nexus"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-nn-bg/30 via-transparent to-transparent" />
         </div>
