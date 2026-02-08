@@ -39,8 +39,8 @@ export default function Navigation() {
         <div className="w-full px-6 lg:px-12">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="flex items-center gap-1 group"
               onClick={(e) => {
                 e.preventDefault();
@@ -56,7 +56,14 @@ export default function Navigation() {
               <span className="w-1.5 h-1.5 rounded-full bg-nn-accent ml-0.5 group-hover:scale-125 transition-transform" />
             </a>
 
-            {/* Desktop Navigation */}
+            {/* Center Text - Desktop Only */}
+            <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
+              <span className="font-mono text-xs tracking-[0.14em] text-nn-text-secondary uppercase">
+                Based in Heidelberg • Serving Globally
+              </span>
+            </div>
+
+            {/* Desktop Navigation - Right Side */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
@@ -68,16 +75,6 @@ export default function Navigation() {
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-nn-accent group-hover:w-full transition-all duration-300" />
                 </button>
               ))}
-            </div>
-
-            {/* CTA Button */}
-            <div className="hidden md:block">
-              <button
-                onClick={() => scrollToSection('#contact')}
-                className="px-5 py-2.5 bg-nn-accent text-nn-bg font-medium text-sm rounded-full hover:bg-nn-accent-hover hover:shadow-glow-button transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
-              >
-                Get in Touch
-              </button>
             </div>
 
             {/* Mobile Menu Button */}

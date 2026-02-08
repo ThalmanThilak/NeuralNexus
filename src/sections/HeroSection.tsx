@@ -17,7 +17,6 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
   const desktopHeadlineRef = useRef<HTMLDivElement>(null);
   const desktopPanelRef = useRef<HTMLDivElement>(null);
   const desktopPanelTextRef = useRef<HTMLDivElement>(null);
-  const desktopLabelRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -29,15 +28,13 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
       const desktopHeadline = desktopHeadlineRef.current;
       const desktopPanel = desktopPanelRef.current;
       const desktopPanelText = desktopPanelTextRef.current;
-      const desktopLabel = desktopLabelRef.current;
 
-      if (desktopFrame && desktopHeadline && desktopPanel && desktopPanelText && desktopLabel) {
+      if (desktopFrame && desktopHeadline && desktopPanel && desktopPanelText) {
         // Initial states (hidden)
         gsap.set(desktopFrame, { opacity: 0, scale: 1.06 });
         gsap.set(desktopHeadline, { x: '-6vw', opacity: 0 });
         gsap.set(desktopPanel, { x: '28vw', opacity: 0 });
         gsap.set(desktopPanelText.children, { y: '3vh', opacity: 0 });
-        gsap.set(desktopLabel, { opacity: 0 });
 
         // Entrance animation timeline (auto-play on load)
         const entranceTl = gsap.timeline({ delay: 0.2 });
@@ -67,11 +64,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
             duration: 0.6,
             stagger: 0.08,
             ease: 'power2.out',
-          }, '-=0.4')
-          .to(desktopLabel, {
-            opacity: 1,
-            duration: 0.5,
-          }, '-=0.3');
+          }, '-=0.4');
 
         // Scroll-driven EXIT animation
         const scrollTl = gsap.timeline({
@@ -137,16 +130,6 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 
       {/* Desktop Layout */}
       <div className="hidden md:block h-full">
-        {/* Micro label */}
-        <div
-          ref={desktopLabelRef}
-          className="absolute left-[6vw] top-[10vh] z-20"
-        >
-          <span className="font-mono text-xs tracking-[0.14em] text-nn-text-secondary uppercase">
-            Based in Heidelberg • Serving Globally
-          </span>
-        </div>
-
         {/* Portrait Frame (center-right) */}
         <div
           ref={desktopFrameRef}
@@ -163,7 +146,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
         {/* Huge Headline (left, overlapping frame) */}
         <div
           ref={desktopHeadlineRef}
-          className="absolute left-[6vw] top-[18vh] z-10 w-[44vw]"
+          className="absolute left-[6vw] top-[45vh] z-10 w-[44vw]"
         >
           <h1 className="font-display font-bold text-[clamp(48px,9vw,140px)] leading-[0.9] tracking-[-0.02em] text-nn-text">
             INTELLIGENCE
