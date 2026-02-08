@@ -101,15 +101,29 @@ export default function ContactSection({ className = '' }: ContactSectionProps) 
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // For Netlify, the form will be handled by Netlify's form processing
-    // The actual submission is handled by the form's netlify attribute
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormState({ name: '', email: '', company: '', message: '' });
-    }, 3000);
+
+    // Encode form data for Netlify
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormState({ name: '', email: '', company: '', message: '' });
+      }, 3000);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an error submitting the form. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
