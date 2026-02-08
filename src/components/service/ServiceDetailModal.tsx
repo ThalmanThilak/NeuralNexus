@@ -27,7 +27,7 @@ export default function ServiceDetailModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-[98vw] w-full h-[90vh] overflow-y-auto bg-nn-bg p-0">
+      <DialogContent className="!max-w-[96vw] w-full h-[90vh] overflow-y-auto bg-nn-bg p-0" showCloseButton={false}>
         <button
           onClick={onClose}
           className="absolute right-4 top-4 z-50 rounded-full p-2 bg-nn-bg/80 backdrop-blur-sm border border-nn-text/10 hover:bg-nn-accent hover:border-nn-accent transition-colors"
@@ -83,7 +83,7 @@ export default function ServiceDetailModal({
                 <h3 className="font-display font-bold text-xl text-nn-text mb-4">
                   What's Included
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
                   {service.details.features.map((feature, index) => (
                     <FeatureCard key={index} feature={feature} />
                   ))}
@@ -105,7 +105,7 @@ export default function ServiceDetailModal({
                 <h3 className="font-display font-bold text-xl text-nn-text mb-4">
                   Pricing Options
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+                <div className="grid grid-cols-3 gap-4 items-stretch">
                   {service.details.pricing.map((tier, index) => (
                     <PricingCard
                       key={index}
@@ -148,7 +148,7 @@ export default function ServiceDetailModal({
             </p>
             <button
               onClick={handleGetStarted}
-              className="px-6 py-3 bg-nn-bg text-nn-text font-bold rounded-lg hover:bg-nn-text hover:text-white transition-all duration-200 text-base"
+              className="px-6 py-3 bg-nn-bg text-nn-text font-bold rounded-lg hover:scale-105 transition-all duration-200 text-base"
             >
               Schedule Free Consultation
             </button>

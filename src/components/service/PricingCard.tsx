@@ -49,8 +49,8 @@ export default function PricingCard({ tier, onSelect }: PricingCardProps) {
         onClick={onSelect}
         className={`w-full py-3 px-6 rounded-lg font-bold text-sm transition-all duration-200 ${
           tier.highlighted
-            ? 'bg-nn-accent text-nn-bg hover:bg-nn-text hover:text-white'
-            : 'bg-nn-text text-white hover:bg-nn-accent hover:text-nn-bg'
+            ? 'bg-nn-accent text-nn-bg hover:scale-105'
+            : 'bg-nn-accent text-nn-bg hover:scale-105'
         }`}
       >
         Get Started
