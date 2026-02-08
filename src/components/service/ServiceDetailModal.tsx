@@ -35,13 +35,13 @@ export default function ServiceDetailModal({
           <X size={20} className="text-nn-text" />
         </button>
 
-        <DialogHeader className="relative h-72 overflow-hidden">
+        <DialogHeader className="relative h-56 overflow-hidden">
           <img
             src={service.image}
             alt={service.panelTitle}
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-contain object-center scale-90 opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-nn-bg via-nn-bg/70 to-nn-bg/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-nn-bg via-nn-bg/80 to-nn-bg/30" />
           <div className="relative h-full flex flex-col justify-end p-8">
             <span className="font-mono text-xs tracking-[0.14em] text-nn-accent uppercase mb-2">
               Service {service.number}
