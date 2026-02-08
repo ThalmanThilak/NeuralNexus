@@ -184,7 +184,7 @@ export default function ContactSection({ className = '' }: ContactSectionProps) 
                   <span className="font-mono text-xs tracking-[0.14em] text-nn-text-secondary uppercase block">
                     Location
                   </span>
-                  <span className="text-nn-text">Heidelberg, Germany</span>
+                  <span className="text-nn-text">Germany</span>
                 </div>
               </div>
 
@@ -350,7 +350,7 @@ export default function ContactSection({ className = '' }: ContactSectionProps) 
                 Intelligence Engineered for Growth
               </p>
               <p className="text-nn-text-secondary/60 text-xs">
-                Based in Heidelberg, serving globally
+                Based in Germany, serving globally
               </p>
             </div>
 
@@ -418,7 +418,7 @@ export default function ContactSection({ className = '' }: ContactSectionProps) 
           {/* Bottom bar */}
           <div className="pt-6 border-t border-nn-border flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-nn-text-secondary/60 text-xs">
-              © 2025 Neural Nexus. All rights reserved. | Heidelberg, Germany
+              © 2025 Neural Nexus. All rights reserved. | Germany
             </p>
             <p className="text-nn-text-secondary/60 text-xs">
               Crafted with precision
